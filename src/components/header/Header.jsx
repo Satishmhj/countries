@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
+import SignIn from './SignIn';
 
 const Header = () => {
+  const [modal, setModal] = useState(false);
   return (
     <>
+    {
+      modal && <SignIn setModal ={setModal} modal ={modal}/>  
+
+    }
       <Navbar bg="primary" expand="lg">
         <Container >
           <div>
@@ -25,20 +31,12 @@ const Header = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="#home">Countries</Nav.Link>
-                <Nav.Link href="#link">Activities</Nav.Link>
-                <Nav.Link href="#link">SignIn</Nav.Link>
-                {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown> */}
+                <Nav.Link href='#'>Countries</Nav.Link>
+                <Nav.Link href='#'>Activities</Nav.Link>
+                <Nav.Link href='#' onClick={ () => {
+                  setModal(true);
+                }} >SignIn</Nav.Link>
+              
               </Nav>
             </Navbar.Collapse>
 

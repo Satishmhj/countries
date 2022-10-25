@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,11 +7,11 @@ import SignIn from './SignIn';
 
 const Header = () => {
   const [modal, setModal] = useState(false);
+   
   return (
     <>
     {
       modal && <SignIn setModal ={setModal} modal ={modal}/>  
-
     }
       <Navbar bg="primary" expand="lg">
         <Container >

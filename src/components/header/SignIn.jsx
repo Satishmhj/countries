@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
@@ -7,9 +8,12 @@ const SignIn = (props) => {
 
     const { setModal } = props;
 
-     const handleClose = (props) => {
+     const handleClose = () => {
         setModal(false)
     }
+
+    const [State, setState] = useState(false);
+    // const0 [modal, setModal] = useState(false);
    
     return (
         <>
